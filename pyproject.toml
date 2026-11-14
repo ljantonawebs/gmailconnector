@@ -1,0 +1,22 @@
+[project]
+name = "gmail-multi"
+version = "0.1.0"
+description = "MCP server giving Claude access to multiple Gmail accounts at once"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=2.3,<3",
+    "google-api-python-client>=2.150",
+    "google-auth-oauthlib>=1.2",
+    "google-auth>=2.30",
+]
+
+[project.scripts]
+gmail-multi = "gmail_multi.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gmail_multi"]
